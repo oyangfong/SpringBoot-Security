@@ -1,0 +1,26 @@
+spring:
+   # HTTP ENCODING
+    http:
+         encoding.charset: UTF-8
+         encoding.enable: true
+         encoding.force: true
+
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&autoReconnectForPools=true&useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        validation-query: SELECT 1
+        test-on-borrow: true
+
+
+    mvc:
+        view:
+           prefix: /WEB-INF/jsp/
+           suffix: .jsp
+
+    mybatis:
+        typeAliasesPackage: com.mysecurity.demo.pojo
+        mapper-locations: classpath*:com/mysecurity/demo/dao/*Mapper.xml
+        config-location: classpath:**/mybatis-config.xml
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysecurity.demo.dao.UserMapper">
+<select id="findAll" resultType="com.mysecurity.demo.pojo.User">
+  select * from user
+</select>
+
+<!-- 根据id查找用户 -->
+<select id="findById" resultType="com.mysecurity.demo.pojo.User" parameterType="int">
+  select * from user where id=#{id}
+</select>
+
+<insert id="add" parameterType="com.mysecurity.demo.pojo.User">
+  insert into user(userName,password,roles)
+  values(#{userName},#{password},#{roles})
+</insert>
+
+<!-- 用户登录 -->
+<select id="checkUser" parameterType="com.mysecurity.demo.pojo.User" resultType="com.mysecurity.demo.pojo.User">
+  select * from user where userName=#{userName} and password=#{password}
+</select>
+
+</mapper>
