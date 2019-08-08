@@ -15,4 +15,5 @@ public interface UserMapper {
   User checkUser(User user);
   
   User findById(int id);
+  User findByUserName(User user);
 }

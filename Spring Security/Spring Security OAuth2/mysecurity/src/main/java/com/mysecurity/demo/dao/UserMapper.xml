@@ -7,9 +7,14 @@
 </select>
 
 <!-- 根据id查找用户 -->
-<select id="findById" resultType="com.mysecurity.demo.pojo.User" parameterType="int">
-  select * from user where id=#{id}
-</select>
+    <select id="findById" resultType="com.mysecurity.demo.pojo.User" parameterType="int">
+        select * from user where id=#{id}
+    </select>
+
+    <!-- 根据userName查找用户 -->
+    <select id="findByUserName" resultType="com.mysecurity.demo.pojo.User" parameterType="com.mysecurity.demo.pojo.User">
+        select * from user where username=#{userName}
+    </select>
 
 <insert id="add" parameterType="com.mysecurity.demo.pojo.User">
   insert into user(userName,password,roles)

@@ -17,4 +17,9 @@ public class User {
     private String userName;
     private String password;
     private String roles;
+
+    public User(){}
+    public User(String userName){
+        this.userName=userName;
+    }
 }
